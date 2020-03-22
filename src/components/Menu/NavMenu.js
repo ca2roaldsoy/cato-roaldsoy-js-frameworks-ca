@@ -16,12 +16,15 @@ function NavMenu() {
         <Navbar.Brand href="./" exact>
           CRGames
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          <Nav.Link to="./" exact>
-            Home
-          </Nav.Link>
-          <Nav.Link to="./contact">Contact</Nav.Link>
-        </Nav>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink to="./" exact>
+              Home
+            </NavLink>
+            <NavLink to="./contact">Contact</NavLink>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
 
       <Switch>
