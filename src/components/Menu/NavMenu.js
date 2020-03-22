@@ -7,6 +7,7 @@ import {
   Route,
   NavLink
 } from "react-router-dom";
+import Home from "../home/Home";
 
 function NavMenu() {
   return (
