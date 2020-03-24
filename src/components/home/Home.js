@@ -3,10 +3,12 @@ import { ApiUrl } from "../../constants/api";
 import Search from "../search/Search";
 import HomeComp from "../../components/home/HomeComp";
 import CardDeck from "react-bootstrap/CardDeck";
+import Spinner from "react-bootstrap/Spinner";
 
 function Home() {
   const [games, setGames] = useState([]);
   const [filterGames, setFilterGames] = useState([]);
+  const [loading, setLoading] = useState([true]);
 
   useEffect(() => {
     fetch(ApiUrl)
@@ -15,7 +17,8 @@ function Home() {
         setGames(data.results);
         setFilterGames(data.results);
       })
-      .catch(err => console.log(err));
+      .catch(err => console.log(err))
+      .finally(() => setLoading(false));
   }, []);
 
   const handleInput = e => {
@@ -30,6 +33,15 @@ function Home() {
 
     setFilterGames(filterArr);
   };
+
+  if (loading) {
+    return (
+      <>
+        <Spinner animation="border" variant="primary" role="status" />
+        <span className="sr-only">Loading...</span> {/* for screen readers */}
+      </>
+    );
+  }
 
   return (
     <>
