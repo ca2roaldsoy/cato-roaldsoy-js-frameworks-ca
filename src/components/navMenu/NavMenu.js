@@ -13,12 +13,14 @@ import Contact from "../contact/Contact";
 function NavMenu() {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark">
-        <Navbar.Brand href="./" exact="true">
-          CRGames
+      <Navbar bg="dark" variant="dark" role="navigation">
+        <Navbar.Brand>
+          <NavLink to="/" exact>
+            CRGames
+          </NavLink>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <NavLink to="./" exact>
               Home
