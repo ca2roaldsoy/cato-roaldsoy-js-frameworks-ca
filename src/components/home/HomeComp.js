@@ -16,7 +16,10 @@ function HomeComp({ id, name, image, rating, release }) {
           <Card.Title className="text-center">{name}</Card.Title>
           <ListGroup>
             <ListGroupItem>Rating: {rating}</ListGroupItem>
-            <ListGroupItem>Released: {release}</ListGroupItem>
+            <ListGroupItem>
+              Released:
+              <br /> {release}
+            </ListGroupItem>
           </ListGroup>
           <Link to={"games/" + id}>
             <Button variant="primary" block>

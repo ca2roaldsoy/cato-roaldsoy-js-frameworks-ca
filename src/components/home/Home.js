@@ -15,7 +15,6 @@ function Home(e) {
     fetch(ApiUrl)
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         setGames(data.results);
         setFilterGames(data.results);
       })
@@ -44,15 +43,6 @@ function Home(e) {
       </>
     );
   }
-
-  /*if (filterGames.length === 0) {
-    return (
-      <>
-        <h4>Sorry. No results :(</h4>
-        <p>Please try and search for another game :)</p>
-        <Search handleInput={handleInput} />
-      </>
-    );*/
 
   return (
     <>

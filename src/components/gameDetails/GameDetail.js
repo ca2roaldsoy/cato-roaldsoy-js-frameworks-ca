@@ -4,6 +4,7 @@ import { ApiUrl } from "../../constants/api";
 import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
+import Row from "react-bootstrap/Row";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
@@ -29,16 +30,16 @@ function GameDetail() {
     );
   }
   return (
-    <>
+    <Row>
       <Title title={detail.name} />
       <img
         src={detail.background_image}
         alt={detail.name}
-        className="detailImg"
+        className="detailImg col-lg-10"
       />
       <p>{detail.description_raw}</p>
       <Link to={detail.website}>{detail.website}</Link>
-    </>
+    </Row>
   );
 }
 
