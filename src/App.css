@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.verified {
+  color: green;
+}
+
+.verified ~ .form-control {
+  border-color: green;
+}
+
+.form-text {
+  color: red;
+}

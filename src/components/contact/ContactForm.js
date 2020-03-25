@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Validation from "./Validation";
 
 const schema = yup.object().shape({
   firstName: yup
@@ -24,18 +25,25 @@ const schema = yup.object().shape({
 });
 
 function ContactForm() {
+  const [validated, setValidated] = useState(false);
+
   const { register, handleSubmit, errors } = useForm({
     validationSchema: schema
   });
 
-  function onSubmit(data) {
+  function onSubmit(data, e) {
     console.log("data", data);
+    e.preventDefault();
+    e.stopPropagation();
+
+    setValidated(true);
   }
 
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
-        <Form.Label>First Name</Form.Label>
+        <Form.Label>First Name</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="text"
           placeholder="First name"
@@ -46,7 +54,8 @@ function ContactForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Last Name</Form.Label>
+        <Form.Label>Last Name</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="text"
           placeholder="Last name"
@@ -57,7 +66,8 @@ function ContactForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Email</Form.Label>
+        <Form.Label>Email</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="email"
           placeholder="E-mail"
@@ -68,7 +78,8 @@ function ContactForm() {
       </Form.Group>
 
       <Form.Group>
-        <Form.Label>Message</Form.Label>
+        <Form.Label>Message</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           as="textarea"
           type="text"
