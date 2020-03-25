@@ -39,6 +39,8 @@ function ContactForm() {
     setValidated(true);
   }
 
+  const reset = () => setValidated(false);
+
   return (
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
@@ -93,7 +95,7 @@ function ContactForm() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
-      <Button variant="danger" type="reset">
+      <Button variant="danger" type="reset" onClick={reset}>
         Reset
       </Button>
     </Form>
