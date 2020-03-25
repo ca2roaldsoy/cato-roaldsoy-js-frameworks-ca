@@ -6,7 +6,7 @@ import CardDeck from "react-bootstrap/CardDeck";
 import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 
-function Home() {
+function Home(e) {
   const [games, setGames] = useState([]);
   const [filterGames, setFilterGames] = useState([]);
   const [loading, setLoading] = useState([true]);
@@ -43,6 +43,15 @@ function Home() {
       </>
     );
   }
+
+  /*if (filterGames.length === 0) {
+    return (
+      <>
+        <h4>Sorry. No results :(</h4>
+        <p>Please try and search for another game :)</p>
+        <Search handleInput={handleInput} />
+      </>
+    );*/
 
   return (
     <>
