@@ -11,7 +11,7 @@ function HomeComp({ id, name, image, rating, release }) {
   return (
     <Col sm={12} md={4} lg={3}>
       <Card>
-        <Card.Img variant="top" src={image} />
+        <Card.Img variant="top" src={image} alt={name} />
         <Card.Body>
           <Card.Title className="text-center">{name}</Card.Title>
           <ListGroup>

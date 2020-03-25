@@ -15,6 +15,7 @@ function Home(e) {
     fetch(ApiUrl)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         setGames(data.results);
         setFilterGames(data.results);
       })
