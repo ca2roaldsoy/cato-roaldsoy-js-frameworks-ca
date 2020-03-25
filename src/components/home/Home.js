@@ -46,8 +46,8 @@ function Home() {
 
   return (
     <>
-      <Search handleInput={handleInput} />
       <Title title="Games" />
+      <Search handleInput={handleInput} />
       <CardDeck>
         {filterGames.map(game => {
           const { id, name, background_image, rating, released } = game;
