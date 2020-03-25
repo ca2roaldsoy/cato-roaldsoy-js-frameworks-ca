@@ -39,3 +39,9 @@ h4 ~ p {
   text-align: center;
   color: red;
 }
+
+.detailImg {
+  width: 400px;
+  margin: 20px auto;
+  display: block;
+}

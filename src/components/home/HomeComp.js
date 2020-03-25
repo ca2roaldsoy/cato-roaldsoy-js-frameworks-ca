@@ -18,7 +18,7 @@ function HomeComp({ id, name, image, rating, release }) {
             <ListGroupItem>Rating: {rating}</ListGroupItem>
             <ListGroupItem>Released: {release}</ListGroupItem>
           </ListGroup>
-          <Link to={"game/" + id}>
+          <Link to={"games/" + id}>
             <Button variant="primary" block>
               More Info
             </Button>

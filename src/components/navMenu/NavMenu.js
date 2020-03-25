@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import Home from "../home/Home";
 import Contact from "../contact/Contact";
+import GameDetail from "../gameDetails/GameDetail";
 import Container from "react-bootstrap/Container";
 
 function NavMenu() {
@@ -23,7 +24,7 @@ function NavMenu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink to="./" exact className="nav-link">
+            <NavLink to="/" exact className="nav-link">
               Home
             </NavLink>
             <NavLink to="/contact" className="nav-link">
@@ -36,7 +37,7 @@ function NavMenu() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/contact" component={Contact} />
-          {/*<Route path="/game/:id" component={GameDetail} />*/}
+          <Route path="/games/:id" component={GameDetail} />
         </Switch>
       </Container>
     </Router>
