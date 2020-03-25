@@ -57,3 +57,8 @@ h1 {
   text-align: center;
   margin: 20px 0;
 }
+
+.btn-danger {
+  font-size: 12px;
+  float: right;
+}

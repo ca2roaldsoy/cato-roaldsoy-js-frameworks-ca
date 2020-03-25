@@ -93,6 +93,9 @@ function ContactForm() {
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      <Button variant="danger" type="reset">
+        Reset
+      </Button>
     </Form>
   );
 }
