@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { ApiUrl } from "../../constants/api";
-import Search from "../search/Search";
-import HomeComp from "../../components/home/HomeComp";
+import Search from "./Search";
+import HomeComp from "./HomeComp";
 import CardDeck from "react-bootstrap/CardDeck";
 import Spinner from "react-bootstrap/Spinner";
 
