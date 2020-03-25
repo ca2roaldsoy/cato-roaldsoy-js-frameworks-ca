@@ -4,6 +4,7 @@ import Search from "./Search";
 import HomeComp from "./HomeComp";
 import CardDeck from "react-bootstrap/CardDeck";
 import Spinner from "react-bootstrap/Spinner";
+import Title from "../../constants/title";
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -46,6 +47,7 @@ function Home() {
   return (
     <>
       <Search handleInput={handleInput} />
+      <Title title="Games" />
       <CardDeck>
         {filterGames.map(game => {
           const { id, name, background_image, rating, released } = game;
