@@ -1,6 +1,7 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
+import PropTypes from "prop-types";
 
 function GamePlatform({ platforms }) {
   return (
@@ -14,5 +15,9 @@ function GamePlatform({ platforms }) {
     </ListGroup>
   );
 }
+
+GamePlatform.propTypes = {
+  platforms: PropTypes.array.isRequired
+};
 
 export default GamePlatform;

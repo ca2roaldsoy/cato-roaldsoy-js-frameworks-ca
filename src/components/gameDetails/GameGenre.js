@@ -1,6 +1,7 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
+import PropTypes from "prop-types";
 
 function GameGenre({ genres }) {
   return (
@@ -14,5 +15,9 @@ function GameGenre({ genres }) {
     </ListGroup>
   );
 }
+
+GameGenre.propTypes = {
+  genres: PropTypes.array.isRequired
+};
 
 export default GameGenre;
