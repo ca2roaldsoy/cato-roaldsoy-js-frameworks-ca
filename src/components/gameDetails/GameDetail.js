@@ -4,7 +4,6 @@ import { ApiUrl } from "../../constants/api";
 import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
-import Row from "react-bootstrap/Row";
 import GameGenre from "./GameGenre";
 import GamePlatform from "./GamePlatform";
 
@@ -34,7 +33,7 @@ function GameDetail() {
     );
   }
   return (
-    <Row>
+    <>
       <Title title={detail.name} />
       <img
         src={detail.background_image}
@@ -46,7 +45,7 @@ function GameDetail() {
 
       <GameGenre genres={detail.genres} />
       <GamePlatform platforms={detail.platforms} />
-    </Row>
+    </>
   );
 }
 
