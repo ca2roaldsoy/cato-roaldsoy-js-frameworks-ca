@@ -7,6 +7,7 @@ import ListGroupItem from "react-bootstrap/ListGroupItem";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
+// Home Page
 function HomeComp({ id, name, image, rating, release }) {
   return (
     <Col sm={12} md={4} lg={3}>

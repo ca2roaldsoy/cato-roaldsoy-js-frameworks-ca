@@ -5,6 +5,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
+import GameDetailList from "./gameDetailList";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
@@ -13,6 +14,7 @@ function GameDetail() {
   const { id } = useParams();
   const gameUrl = ApiUrl + "/" + id;
 
+  // Fetch game details
   useEffect(() => {
     fetch(gameUrl)
       .then(response => response.json())
@@ -21,6 +23,7 @@ function GameDetail() {
       .finally(() => setLoading(false));
   }, [gameUrl]);
 
+  // Loading
   if (loading) {
     return (
       <>
@@ -39,6 +42,8 @@ function GameDetail() {
       />
       <p>{detail.description_raw}</p>
       <Link to={detail.website}>{detail.website}</Link>
+
+      <GameDetailList genres={detail.genres} platforms={detail.platforms} />
     </Row>
   );
 }

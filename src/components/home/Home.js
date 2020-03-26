@@ -11,6 +11,7 @@ function Home(e) {
   const [filterGames, setFilterGames] = useState([]);
   const [loading, setLoading] = useState([true]);
 
+  // fetching game api
   useEffect(() => {
     fetch(ApiUrl)
       .then(response => response.json())
@@ -22,6 +23,7 @@ function Home(e) {
       .finally(() => setLoading(false));
   }, []);
 
+  // filter search input
   const handleInput = e => {
     const inputValue = e.target.value.toLowerCase();
     const filterArr = games.filter(function(game) {
@@ -35,6 +37,7 @@ function Home(e) {
     setFilterGames(filterArr);
   };
 
+  // loading
   if (loading) {
     return (
       <>
@@ -44,11 +47,14 @@ function Home(e) {
     );
   }
 
+  // Home Page
   return (
     <>
       <Title title="Games" />
       <Search handleInput={handleInput} />
       <CardDeck>
+        
+        {/* Map over games displayed*/}
         {filterGames.map(games => {
           const { id, name, background_image, rating, released } = games;
 

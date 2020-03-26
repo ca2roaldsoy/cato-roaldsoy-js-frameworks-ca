@@ -12,6 +12,7 @@ import Contact from "../contact/Contact";
 import GameDetail from "../gameDetails/GameDetail";
 import Container from "react-bootstrap/Container";
 
+// Navigation Menu
 function NavMenu() {
   return (
     <Router>
@@ -21,8 +22,11 @@ function NavMenu() {
             CRGames
           </NavLink>
         </Navbar.Brand>
+
+        {/* Include hamburger Menu*/}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+
           <Nav className="mr-auto">
             <NavLink to="/" exact className="nav-link">
               Home
@@ -33,6 +37,8 @@ function NavMenu() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
+      {/* Navigating showing correct component*/}
       <Container>
         <Switch>
           <Route path="/" exact component={Home} />
