@@ -5,7 +5,8 @@ import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
-import GameDetailList from "./GameDetailList";
+import GameGenre from "./GameGenre";
+import GamePlatform from "./GamePlatform";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
@@ -43,7 +44,8 @@ function GameDetail() {
       <p>{detail.description_raw}</p>
       <Link to={detail.website}>{detail.website}</Link>
 
-      <GameDetailList genres={detail.genres} platforms={detail.platforms} />
+      <GameGenre genres={detail.genres} />
+      <GamePlatform platforms={detail.platforms} />
     </Row>
   );
 }
