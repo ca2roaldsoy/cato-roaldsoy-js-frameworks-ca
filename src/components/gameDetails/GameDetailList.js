@@ -3,7 +3,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 function GameDetailList({ genres, platforms }) {
-  console.log(genres, platforms);
   return (
     <>
       <ListGroup className="mt-5" as="ul">
