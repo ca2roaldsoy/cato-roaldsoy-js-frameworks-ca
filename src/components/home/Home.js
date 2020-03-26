@@ -5,11 +5,13 @@ import HomeComp from "./HomeComp";
 import CardDeck from "react-bootstrap/CardDeck";
 import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
+import Button from "react-bootstrap/Button";
 
 function Home(e) {
   const [games, setGames] = useState([]);
   const [filterGames, setFilterGames] = useState([]);
-  const [loading, setLoading] = useState([true]);
+  const [loading, setLoading] = useState(true);
+  const [favourite, setFavourite] = useState(true);
 
   // fetching game api
   useEffect(() => {
