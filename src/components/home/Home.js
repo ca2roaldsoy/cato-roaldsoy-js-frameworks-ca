@@ -26,7 +26,7 @@ function Home(e) {
   }, []);
 
   // filter search input
-  const handleInput = e => {
+  const handleInput = () => {
     const inputValue = e.target.value.toLowerCase();
     const filterArr = games.filter(function(game) {
       if (game.name.toLowerCase().indexOf(inputValue) !== -1) {
@@ -55,7 +55,6 @@ function Home(e) {
       <Title title="Games" />
       <Search handleInput={handleInput} />
       <CardDeck>
-        
         {/* Map over games displayed*/}
         {filterGames.map(games => {
           const { id, name, background_image, rating, released } = games;

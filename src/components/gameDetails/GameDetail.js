@@ -5,7 +5,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import Row from "react-bootstrap/Row";
-import GameDetailList from "./gameDetailList";
+import GameDetailList from "./GameDetailList";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
