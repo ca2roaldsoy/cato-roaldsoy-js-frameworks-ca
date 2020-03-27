@@ -48,7 +48,7 @@ function GameDetail() {
         {/*Redirect back to home page*/}
         {setTimeout(() => {
           window.location.href = "/";
-        }, 80000)}
+        }, 3500)}
       </section>
     );
   }
