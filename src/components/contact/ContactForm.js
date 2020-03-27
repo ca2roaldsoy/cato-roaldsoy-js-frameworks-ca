@@ -24,14 +24,12 @@ const schema = yup.object().shape({
     .min(10, "Message must contain of least 10 characters")
 });
 
-function ContactForm(e) {
+function ContactForm() {
   const [validated, setValidated] = useState(false);
 
   const { register, handleSubmit, errors } = useForm({
     validationSchema: schema
   });
-
-  const { firstName, lastName, email, message } = errors;
 
   function onSubmit(data, e) {
     console.log("data", data);
@@ -47,39 +45,43 @@ function ContactForm(e) {
     <Form onSubmit={handleSubmit(onSubmit)}>
       <Form.Group>
         <Form.Label>First Name</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="text"
           placeholder="First name"
           name="firstName"
           ref={register()}
         />
-        <Validation name={firstName} valid={validated} />
+        {errors.firstName && <Form.Text>{errors.firstName.message}</Form.Text>}
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Last Name</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="text"
           placeholder="Last name"
           name="lastName"
           ref={register()}
         />
-        <Validation name={lastName} valid={validated} />
+        {errors.lastName && <Form.Text>{errors.lastName.message}</Form.Text>}
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Email</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           type="email"
           placeholder="E-mail"
           name="email"
           ref={register()}
         />
-        <Validation name={email} valid={validated} />
+        {errors.email && <Form.Text>{errors.email.message}</Form.Text>}
       </Form.Group>
 
       <Form.Group>
         <Form.Label>Message</Form.Label> <br />
+        <Validation validated={validated} />
         <Form.Control
           as="textarea"
           type="text"
@@ -87,7 +89,7 @@ function ContactForm(e) {
           name="message"
           ref={register()}
         />
-        <Validation name={message} valid={validated} />
+        {errors.message && <Form.Text>{errors.message.message}</Form.Text>}
       </Form.Group>
 
       <Button variant="primary" type="submit">

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
 import { ApiUrl } from "../../constants/api";
 import Spinner from "react-bootstrap/Spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import GameGenre from "./GameGenre";
 import GamePlatform from "./GamePlatform";
+import Home from "../home/Home";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
@@ -27,10 +28,17 @@ function GameDetail() {
   if (loading) {
     return (
       <>
-        <Spinner animation="border" variant="primary" role="status" />
+        <Spinner animation="border" variant="primary" role="status" className="spinner" />
         <span className="sr-only">Loading...</span> {/* for screen readers */}
       </>
     );
+  }
+
+  if (detail.website === undefined) {
+    setTimeout = () => {
+      
+    }
+    return <Redirect to="/" exact />
   }
   return (
     <>

@@ -5,7 +5,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink
+  NavLink,
+  Redirect
 } from "react-router-dom";
 import Home from "../home/Home";
 import Contact from "../contact/Contact";

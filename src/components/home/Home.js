@@ -41,7 +41,7 @@ function Home() {
   if (loading) {
     return (
       <>
-        <Spinner animation="border" variant="primary" role="status" />
+        <Spinner animation="border" variant="primary" role="status" className="spinner"/>
         <span className="sr-only">Loading...</span> {/* for screen readers */}
       </>
     );
