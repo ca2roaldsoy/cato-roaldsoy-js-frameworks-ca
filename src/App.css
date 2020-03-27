@@ -52,8 +52,12 @@ h4 ~ p {
 }
 
 .spinner {
-
   margin: 250px auto;
   display: block;
+}
 
+.idErrorMsg {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }

@@ -5,8 +5,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  NavLink,
-  Redirect
+  NavLink
 } from "react-router-dom";
 import Home from "../home/Home";
 import Contact from "../contact/Contact";
@@ -27,7 +26,6 @@ function NavMenu() {
         {/* Include hamburger Menu*/}
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-
           <Nav className="mr-auto">
             <NavLink to="/" exact className="nav-link">
               Home
