@@ -7,7 +7,7 @@ function RedirectToHome({ timer, setTimer }) {
       window.location.href = "/";
     }, 4000);
 
-    // countdown timer
+    // countdown timer each second
     const counter = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
     return () => clearInterval(counter);
   }, [timer, setTimer]);
