@@ -5,7 +5,7 @@ import Title from "../../constants/title";
 function Contact() {
   return (
     <>
-      <Title title="Contact Us" />
+      <Title title="Contact Us" role="heading" />
       <ContactForm />
     </>
   );

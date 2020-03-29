@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 function GamePlatform({ platforms }) {
   return (
-    <ListGroup className="mt-5" as="ul">
+    <ListGroup className="mt-5 mb-5" as="ul">
       Platform
       {platforms.map((platform, i) => (
         <ListGroupItem key={i} as="li">
