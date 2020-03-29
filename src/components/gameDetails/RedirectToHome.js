@@ -1,7 +1,7 @@
 import React from "react";
 
 function RedirectToHome() {
-  //Redirect back to home page
+  //Redirect back to home page after 4 sec.
   const reDirect = () => {
     setTimeout(() => {
       window.location.href = "/";
