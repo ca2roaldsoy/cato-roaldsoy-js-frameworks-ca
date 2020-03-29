@@ -72,7 +72,9 @@ function Home() {
     <>
       <Title title="Games" role="heading" />
       <Search handleInput={handleInput} role="search" />
-      <CardDeck>{searchResult()}</CardDeck>
+      <CardDeck as="main" role="main">
+        {searchResult()}
+      </CardDeck>
     </>
   );
 }

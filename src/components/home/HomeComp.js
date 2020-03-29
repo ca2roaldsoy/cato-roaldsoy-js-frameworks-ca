@@ -10,7 +10,7 @@ import Button from "react-bootstrap/Button";
 // Home Page
 function HomeComp({ id, name, image, rating, release }) {
   return (
-    <Col sm={12} md={4} lg={3}>
+    <Col sm={12} md={4} lg={3} as="section">
       <Card>
         <Card.Img variant="top" src={image} alt={name} />
         <Card.Body>

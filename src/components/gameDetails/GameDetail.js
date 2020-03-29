@@ -32,15 +32,7 @@ function GameDetail() {
 
   // Error message if no games matches id
   if (detail.website === undefined) {
-    return (
-      <section className="errorMsg">
-        <h4>Ups! We couldn't find any information about games</h4>
-        <p>You will be redirected back to the home page</p>
-
-        {/*Redirect back home*/}
-        <RedirectToHome timer={timer} setTimer={setTimer} />
-      </section>
-    );
+    return <RedirectToHome timer={timer} setTimer={setTimer} />;
   }
 
   return (

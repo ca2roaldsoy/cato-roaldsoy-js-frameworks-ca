@@ -18,7 +18,13 @@ function RedirectToHome({ timer, setTimer }) {
     setTimer: PropTypes.func.isRequired
   };
 
-  return <div>{timer}</div>;
+  return (
+    <section className="errorMsg">
+      <h4>Ups! We couldn't find any information about games</h4>
+      <p>You will be redirected back to the home page</p>
+      {timer}
+    </section>
+  );
 }
 
 export default RedirectToHome;
