@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ApiUrl } from "../../constants/api";
-import Spinner from "react-bootstrap/Spinner";
+import Spinner from "../../constants/spinner";
 import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import GameGenre from "./GameGenre";
@@ -11,6 +11,7 @@ import RedirectToHome from "./RedirectToHome";
 function GameDetail() {
   const [detail, setDetail] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [timer, setTimer] = useState(4);
 
   const { id } = useParams();
   const gameUrl = ApiUrl + "/" + id;
@@ -26,17 +27,7 @@ function GameDetail() {
 
   // Loading
   if (loading) {
-    return (
-      <>
-        <Spinner
-          animation="border"
-          variant="primary"
-          role="status"
-          className="spinner"
-        />
-        <span className="sr-only">Loading...</span> {/* for screen readers */}
-      </>
-    );
+    return <Spinner />;
   }
 
   // Error message if no games matches id
@@ -46,7 +37,8 @@ function GameDetail() {
         <h4>Ups! We couldn't find any information about games</h4>
         <p>You will be redirected back to the home page</p>
 
-        <RedirectToHome />
+        {/*Redirect back home*/}
+        <RedirectToHome timer={timer} setTimer={setTimer} />
       </section>
     );
   }

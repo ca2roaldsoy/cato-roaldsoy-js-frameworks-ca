@@ -3,7 +3,7 @@ import { ApiUrl } from "../../constants/api";
 import Search from "./Search";
 import HomeComp from "./HomeComp";
 import CardDeck from "react-bootstrap/CardDeck";
-import Spinner from "react-bootstrap/Spinner";
+import Spinner from "../../constants/spinner";
 import Title from "../../constants/title";
 
 function Home() {
@@ -39,17 +39,7 @@ function Home() {
 
   // loading
   if (loading) {
-    return (
-      <>
-        <Spinner
-          animation="border"
-          variant="primary"
-          role="status"
-          className="spinner"
-        />
-        <span className="sr-only">Loading...</span> {/* for screen readers */}
-      </>
-    );
+    return <Spinner />;
   }
 
   function searchResult() {
