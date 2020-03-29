@@ -56,8 +56,13 @@ h4 ~ p {
   display: block;
 }
 
-.idErrorMsg {
+.errorMsg {
   text-align: center;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+}
+
+.tryAgain {
+  color: green;
 }

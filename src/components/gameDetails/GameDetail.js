@@ -6,6 +6,7 @@ import Title from "../../constants/title";
 import { Link } from "react-router-dom";
 import GameGenre from "./GameGenre";
 import GamePlatform from "./GamePlatform";
+import RedirectToHome from "./RedirectToHome";
 
 function GameDetail() {
   const [detail, setDetail] = useState([]);
@@ -41,21 +42,18 @@ function GameDetail() {
   // Error message if no games matches id
   if (detail.website === undefined) {
     return (
-      <section className="idErrorMsg">
-        <h4>Ups! We couldn't find any games</h4>
+      <section className="errorMsg">
+        <h4>Ups! We couldn't find any information about games</h4>
         <p>You will be redirected back to the home page</p>
 
-        {/*Redirect back to home page*/}
-        {setTimeout(() => {
-          window.location.href = "/";
-        }, 3500)}
+        <RedirectToHome />
       </section>
     );
   }
 
   return (
     <>
-      <Title title={detail.name} />
+      <Title title={detail.name} role="heading" />
       <img
         src={detail.background_image}
         alt={detail.name}

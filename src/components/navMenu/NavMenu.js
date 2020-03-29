@@ -18,7 +18,7 @@ function NavMenu() {
     <Router>
       <Navbar bg="dark" variant="dark" role="navigation" expand="md">
         <Navbar.Brand>
-          <NavLink to="/" exact>
+          <NavLink to="/" exact role="link">
             CRGames
           </NavLink>
         </Navbar.Brand>
@@ -27,10 +27,10 @@ function NavMenu() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavLink to="/" exact className="nav-link">
+            <NavLink to="/" exact className="nav-link" role="link">
               Home
             </NavLink>
-            <NavLink to="/contact" className="nav-link">
+            <NavLink to="/contact" className="nav-link" role="link">
               Contact
             </NavLink>
           </Nav>

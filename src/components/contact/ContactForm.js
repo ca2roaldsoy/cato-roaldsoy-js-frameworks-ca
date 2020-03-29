@@ -92,10 +92,10 @@ function ContactForm() {
         {errors.message && <Form.Text>{errors.message.message}</Form.Text>}
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" role="button">
         Submit
       </Button>
-      <Button variant="danger" type="reset" onClick={reset}>
+      <Button variant="danger" type="reset" onClick={reset} role="button">
         Reset
       </Button>
     </Form>

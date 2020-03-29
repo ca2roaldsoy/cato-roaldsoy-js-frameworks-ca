@@ -15,15 +15,15 @@ function HomeComp({ id, name, image, rating, release }) {
         <Card.Img variant="top" src={image} alt={name} />
         <Card.Body>
           <Card.Title className="text-center">{name}</Card.Title>
-          <ListGroup>
-            <ListGroupItem>Rating: {rating}</ListGroupItem>
-            <ListGroupItem>
+          <ListGroup role="list">
+            <ListGroupItem role="listitem">Rating: {rating}</ListGroupItem>
+            <ListGroupItem role="listitem">
               Released:
               <br /> {release}
             </ListGroupItem>
           </ListGroup>
-          <Link to={"games/" + id}>
-            <Button variant="primary" block>
+          <Link to={"games/" + id} role="link">
+            <Button variant="primary" block role="button">
               More Info
             </Button>
           </Link>

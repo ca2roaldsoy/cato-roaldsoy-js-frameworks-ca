@@ -7,7 +7,11 @@ import FormControl from "react-bootstrap/FormControl";
 function Search({ handleInput }) {
   return (
     <InputGroup className="search">
-      <FormControl placeholder="Search..." onChange={e => handleInput(e)} />
+      <FormControl
+        placeholder="Search..."
+        onChange={e => handleInput(e)}
+        role="search-input"
+      />
     </InputGroup>
   );
 }

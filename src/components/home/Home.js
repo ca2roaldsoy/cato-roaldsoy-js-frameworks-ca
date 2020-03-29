@@ -41,7 +41,12 @@ function Home() {
   if (loading) {
     return (
       <>
-        <Spinner animation="border" variant="primary" role="status" className="spinner"/>
+        <Spinner
+          animation="border"
+          variant="primary"
+          role="status"
+          className="spinner"
+        />
         <span className="sr-only">Loading...</span> {/* for screen readers */}
       </>
     );
@@ -50,9 +55,10 @@ function Home() {
   function searchResult() {
     if (filterGames.length === 0) {
       return (
-        <>
+        <section className="errorMsg">
           <h4>Sorry. No result :( </h4>
-        </>
+          <p className="tryAgain">Please try another search :)</p>
+        </section>
       );
     }
     // Map over games displayed
@@ -74,8 +80,8 @@ function Home() {
 
   return (
     <>
-      <Title title="Games" />
-      <Search handleInput={handleInput} />
+      <Title title="Games" role="heading" />
+      <Search handleInput={handleInput} role="search" />
       <CardDeck>{searchResult()}</CardDeck>
     </>
   );
